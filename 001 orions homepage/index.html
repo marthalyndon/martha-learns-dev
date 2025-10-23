@@ -3,38 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orion The Cat</title>
+    <title>Orion: Lumpy or Not Lumpy?</title>
     <link rel="stylesheet" href="/src/styles/main.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="/" class="nav-logo">Orion The Cat</a>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#who-he-is" class="nav-link">Who He Is</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#pictures" class="nav-link">Pictures</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    
     <div id="app">
-        <header>
-            <h1>Welcome to Orion's World</h1>
-            <p>The most magnificent feline on the internet</p>
-        </header>
         <main>
-            <section id="who-he-is">
-                <h2>Who He Is</h2>
-                <p>Content coming soon...</p>
-            </section>
-            
             <section id="pictures">
-                <h2>Pictures</h2>
-                <p>Gallery coming soon...</p>
+                <h2>the levels of orion's lumptitude</h2>
+                <div class="photo-upload-section">
+                    <input type="file" id="photoInput" accept="image/*" multiple style="display: none;">
+                    <button class="btn" id="addPhotoBtn">Add Photos of Orion</button>
+                </div>
+                
+                <div id="photoGallery" class="photo-gallery">
+                    <!-- Photos will be added here dynamically -->
+                </div>
+                
+                <!-- Rating Modal -->
+                <div id="ratingModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h3>Rate This Photo</h3>
+                        <img id="modalImage" src="" alt="Photo to rate">
+                        
+                        <div class="rating-section">
+                            <label for="cutenessSlider">Lumpy to Cute Scale:</label>
+                            <div class="slider-container">
+                                <span class="slider-label">😴 Lumpy</span>
+                                <input type="range" id="cutenessSlider" min="1" max="10" value="5">
+                                <span class="slider-label">😻 Cute</span>
+                            </div>
+                            <div class="rating-value">Rating: <span id="ratingValue">5</span>/10</div>
+                        </div>
+                        
+                        <div class="tags-section">
+                            <label for="tagInput">Tags (comma-separated):</label>
+                            <input type="text" id="tagInput" placeholder="e.g. sleepy, playful, majestic">
+                        </div>
+                        
+                        <button class="btn" id="saveRatingBtn">Save</button>
+                    </div>
+                </div>
             </section>
         </main>
     </div>
